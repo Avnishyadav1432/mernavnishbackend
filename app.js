@@ -19,14 +19,14 @@ const connection=require("./database/conn");
 const bodyParser = require("body-parser");
 const country=require('./model/countrymodel')
 app.use(bodyParser.urlencoded({ extended: false }));
-const data=async()=>{
-  const data1=await country({
-    countryT:["India","Pakistan","USA","China"]
+// const data=async()=>{
+//   const data1=await country({
+//     countryT:["India","Pakistan","USA","China"]
     
-  })
-  await data1.save();
-}
-data();
+//   })
+//   await data1.save();
+// }
+// data();
 
 app.listen(port, () => {
   console.log(`server running port is ${port}`);
