@@ -1,9 +1,9 @@
 
 const mongoose=require("mongoose");
-mongoose.set("strictQuery", false);
+
 const DB=process.env.DataBase;
-mongoose.connect(DB,{useNewUrlParser:true,
-    useUnifiedTopology:true
-    },()=>{
+mongoose.connect(DB).then(()=>{
         console.log("database connected");
-    });
+    }).catch((err)=>{
+console.log(err);
+    })
