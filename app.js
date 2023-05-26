@@ -3,7 +3,7 @@ const app = express();
 const dotenv=require("dotenv");
 const mongoose=require("mongoose");
 const cookieParser = require('cookie-parser');
-dotenv.config({path:'./config.env'})
+dotenv.config({path:'./.env'})
 
 const port=process.env.port || 6060;
 require('./database/conn');
