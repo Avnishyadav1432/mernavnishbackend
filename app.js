@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //   await data1.save();
 // }
 // data();
-console.log("hii")
+
 app.listen(port, () => {
   console.log(`server running port is ${port}`);
 });

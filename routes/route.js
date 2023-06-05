@@ -2,13 +2,16 @@ let express = require("express");
 let router = express.Router();
 let mysql = require("mysql");
 const mongoose = require("mongoose");
-const { signup, signin, getSignup, logout,getSingleUser,updateUserRole,deleteUser } = require("../controller/user");
+const { signup,Signup, signin, getSignup, logout,getSingleUser,updateUserRole,deleteUser } = require("../controller/user");
 const { form,getForm } = require("../controller/form");
 const { countryRoute,countryGet } = require("../controller/countryContro");
 const { isAuthenticatedUser, authorizeRoles } = require("../middleware/auth");
+const { contact,getcontact } = require("../controller/contact");
 
 router.route("/signup").post(signup);
-
+router.route("/signup").get(Signup);
+router.route("/contact").post(contact);
+router.route("/contact").get(getcontact);
 router.route("/signin").post(signin);
 router.route("/form").post(form);
 router.route("/country").post(countryRoute);

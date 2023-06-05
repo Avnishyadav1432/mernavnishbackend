@@ -2,6 +2,7 @@ const jwt=require('jsonwebtoken');
 const express = require("express");
 const User=require("../model/user");
 const sendToken = require("../utils/jwtToken");
+
 exports.signup=async(req,res)=>{
     //object destructureing*******
     const { username, email, password,nationality } = req.body;
@@ -32,6 +33,7 @@ exports.signup=async(req,res)=>{
     try{
         // let token;
         const {email,password}=req.body;
+        console.log("hii")
         if(!email || !password){
             return res.status(400).json({error:"plz fill the data"});
         }
@@ -60,6 +62,15 @@ exports.signup=async(req,res)=>{
    res.status(200).json({
     success: true,
     getSignUp,
+  });
+  }
+  //get SignUp page**********************************
+  exports.Signup=async(req,res)=>{
+    
+    const data=await User.find();
+   res.status(200).json({
+    success: true,
+    data,
   });
   }
 
